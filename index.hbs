@@ -32,11 +32,11 @@
             <td id={{title}} class="indexDescription">{{excerpt}}</td>
                <script>
                 var desc = $('.indexDescription').text();
-                var descSplit = desc.split("-", 3);
+                var descSplit = desc.split("-", 10);
                 var descSlice = "";
                 for (var i=0;i<descSplit.length;i++)
                   {
-                    if(i==2) {
+                    if(i>=2) {
                       descSlice = descSplit[i];
                     }
                   };
