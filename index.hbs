@@ -1,0 +1,76 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+    <script src="{{asset "js/jquery-1.11.0.min.js"}}"></script>
+
+{{! The big featured header on the homepage, with the site logo and description }}
+<header>
+</header>
+
+{{! The main content area on the homepage }}
+<main class="content" role="main">
+ <div>
+    <table id="indexTable">
+      <thead>
+        <tr>
+          <th class="tableNameHeader tdCenter">Theme Name</th>
+          <th class="tableDemoHeader tdCenter">Demo</th>
+          <th class="tablePriceHeader tdCenter">Price</th>
+          <th class="tableDescHeader tdCenter">Description</th>
+          <th class="tableColumnHeader tdCenter">Columns</th>
+        </tr>
+      </thead>
+      <tbody>
+    {{! Each post will be output using this markup }}
+    {{#foreach posts}}
+        <tr class="tableRows">
+            <td class="tableTitle"><a href="{{url}}">{{title}}</a></td>
+            <td class="tableImage"><a href="{{url}}"><img class="lazy" src="/assets/images/{{title}}.jpg" /></a></td>
+            <td>{{#foreach tags}}{{#if @first}}{{name}}{{/if}} {{/foreach}}</td>
+            <td id={{title}} class="indexDescription">{{excerpt}}</td>
+               <script>
+                var desc = $('.indexDescription').text();
+                var descSplit = desc.split("-", 3);
+                var descSlice = "";
+                for (var i=0;i<descSplit.length;i++)
+                  {
+                    if(i==2) {
+                      descSlice = descSplit[i];
+                    }
+                  };
+                $("td.indexDescription").replaceWith("<td class=\"indexDescriptionSlice\">"+descSlice+"</td>");
+                </script>
+            <td class="tdCenter">{{#foreach tags}}{{#if @last}}{{name}}{{/if}} {{/foreach}}</td>
+        </tr>
+        {{/foreach}}
+    </tbody>
+    </table>
+    <script>
+      $(document).ready(function() {
+          $('#indexTable').dataTable({
+            "bAutoWidth": true,
+            "bPaginate": false,
+            "aoColumns": [
+              null,
+              { "bSortable": false },
+              null,
+              null,
+              null
+            ],
+            "oLanguage": {
+              "sInfo": "Number of Themes = _TOTAL_"
+            }
+          } );
+      } );
+    </script>
+    <script>
+      jQuery(document).ready(function() {
+        jQuery("img.lazy").lazy({
+            delay: 2000
+        });
+      });
+    </script>
+    </div>
+</main>
