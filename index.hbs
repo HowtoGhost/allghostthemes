@@ -37,7 +37,7 @@
                 for (var i=0;i<descSplit.length;i++)
                   {
                     if(i>=2) {
-                      descSlice = descSplit[i];
+                      descSlice = descSlice+descSplit[i];
                     }
                   };
                 $("td.indexDescription").replaceWith("<td class=\"indexDescriptionSlice\">"+descSlice+"</td>");
