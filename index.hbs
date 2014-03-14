@@ -28,7 +28,7 @@
         <tr class="tableRows">
             <td class="tableTitle"><a href="{{url}}">{{title}}</a></td>
             <td class="tableImage"><a href="{{url}}"><img class="lazy" src="/assets/images/{{title}}.jpg" /></a></td>
-            <td>{{#foreach tags}}{{#if @first}}{{name}}{{/if}} {{/foreach}}</td>
+            <td class="tdCenter">{{#foreach tags}}{{#if @first}}{{name}}{{/if}} {{/foreach}}</td>
             <td id={{title}} class="indexDescription">{{excerpt}}</td>
                <script>
                 var desc = $('.indexDescription').text();
