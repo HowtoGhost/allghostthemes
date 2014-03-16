@@ -605,6 +605,12 @@ margin on the iframe, cause it breaks stuff. */
    6. Third Party Elements - Embeds from other services
    ========================================================================== */
 
+/* Navbar */
+
+.navbar {
+    margin-bottom: 10px !important;
+}
+
 /* Github */
 
 .gist table {

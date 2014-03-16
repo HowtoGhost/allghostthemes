@@ -49,12 +49,13 @@
     </table>
     <script>
       $(document).ready(function() {
+        var tableHeight = $('body').height() -125;
           $('#indexTable').dataTable({
             "bAutoWidth": true,
             
             "bScrollInfinite": true,
             "bScrollCollapse": true,
-            "sScrollY": "600px",
+            "sScrollY": tableHeight,
             "aoColumns": [
               null,
               { "bSortable": false },
