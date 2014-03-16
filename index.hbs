@@ -27,7 +27,7 @@
     {{#foreach posts}}
         <tr class="tableRows">
             <td class="tableTitle"><a href="{{url}}">{{title}}</a></td>
-            <td class="tableImage"><a href="{{url}}"><img class="lazy" src="/assets/images/{{title}}.jpg" /></a></td>
+            <td class="tableImage"><a href="{{url}}"><img class="lazy" src="http://cdn.allghostthemes.com/assets/images/{{title}}.jpg" /></a></td>
             <td class="tdCenter">{{#foreach tags}}{{#if @last}}{{name}}{{/if}} {{/foreach}}</td>
             <td id={{title}} class="indexDescription">{{excerpt characters="500"}}</td>
                <script>
@@ -51,7 +51,10 @@
       $(document).ready(function() {
           $('#indexTable').dataTable({
             "bAutoWidth": true,
-            "bPaginate": false,
+            
+            "bScrollInfinite": true,
+            "bScrollCollapse": true,
+            "sScrollY": "600px",
             "aoColumns": [
               null,
               { "bSortable": false },
@@ -64,13 +67,6 @@
             }
           } );
       } );
-    </script>
-    <script>
-      jQuery(document).ready(function() {
-        jQuery("img.lazy").lazy({
-            delay: 2000
-        });
-      });
     </script>
     </div>
 </main>
