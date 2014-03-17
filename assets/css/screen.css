@@ -680,6 +680,15 @@ margin on the iframe, cause it breaks stuff. */
     margin-top: 5px;
 }
 
+.shareIcons {
+    float:right;
+}
+
+#problemEmail {
+    position:absolute;
+    margin-left: 40%;
+    margin-top: 12.5px;
+}
 
 /* ==========================================================================
    7. Pagination - Tools to let you flick between pages
