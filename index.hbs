@@ -56,12 +56,9 @@
             "bScrollInfinite": true,
             "bScrollCollapse": true,
             "sScrollY": tableHeight,
-            "aoColumns": [
-              null,
-              { "bSortable": false },
-              null,
-              null,
-              null
+            "aoColumnDefs": [
+              {"sType": "currency", "aTargets":[2]},
+              {"bSortable": false, "aTargets":[1]}
             ],
             "oLanguage": {
               "sInfo": "Number of Themes = _TOTAL_"
