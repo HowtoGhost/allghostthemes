@@ -690,6 +690,10 @@ margin on the iframe, cause it breaks stuff. */
     margin-top: 12.5px;
 }
 
+.shareIcons h4 a {
+    padding-right: 5px;
+}
+
 /* ==========================================================================
    7. Pagination - Tools to let you flick between pages
    ========================================================================== */
