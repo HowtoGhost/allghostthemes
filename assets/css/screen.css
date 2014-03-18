@@ -694,6 +694,10 @@ margin on the iframe, cause it breaks stuff. */
     padding-right: 5px;
 }
 
+.dowloadLink {
+    color:#08c;
+}
+
 /* ==========================================================================
    7. Pagination - Tools to let you flick between pages
    ========================================================================== */
