@@ -625,6 +625,10 @@ margin on the iframe, cause it breaks stuff. */
 
 /* DataTables */
 
+.dataTables_scroll {
+    padding-top: 15px;
+}
+
 #indexTable_length {
     margin-left: 10px;
 }
@@ -705,14 +709,21 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .adsbygoogle {
-    margin-left: auto;
+    margin-left: -5%;
     margin-right: auto;
+    margin-top: -22.5px;
 }
 
 #homeHeader {
     text-align: center;
     height:60px;
 }
+
+#aswift_0_anchor {
+    z-index: 10;
+}
+
+
 
 /* ==========================================================================
    7. Pagination - Tools to let you flick between pages
