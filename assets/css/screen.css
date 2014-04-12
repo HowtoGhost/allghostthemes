@@ -711,6 +711,7 @@ margin on the iframe, cause it breaks stuff. */
 
 #homeHeader {
     text-align: center;
+    height:60px;
 }
 
 /* ==========================================================================
