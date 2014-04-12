@@ -698,6 +698,21 @@ margin on the iframe, cause it breaks stuff. */
     color:#08c;
 }
 
+/****************Ads Related*********/
+
+#homeContent {
+    margin-top: -50px;
+}
+
+.adsbygoogle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#homeHeader {
+    text-align: center;
+}
+
 /* ==========================================================================
    7. Pagination - Tools to let you flick between pages
    ========================================================================== */
