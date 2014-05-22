@@ -708,6 +708,10 @@ margin on the iframe, cause it breaks stuff. */
     padding: 0 30px 0 30px;
 }
 
+/***************Static Page Styles***********/
+
+.post.page {padding-top: 10px;}
+
 /****************Ads Related*********/
 
 /*#homeContent {
