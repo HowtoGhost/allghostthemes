@@ -11,14 +11,9 @@
 </header>
 
 {{! The main content area on the homepage }}
-<main class="content index-content" role="main">
-<div id="home-main-header">
-  <h2 id="home-header">What is All Ghost Themes</h2>
-  <p id="homeDesc">All Ghost Themes was built to make searching for a Ghost theme as easy and as fast as possible. We have listed every Ghost theme we have been able to find here so you can easily scroll through hundreds of themes without the need to load page after page just to get a preview of what it looks like.</p>
-  <br style="clear:both">
-</div>
+<main class="content" role="main">
+{{!-- <h5 id="homeDesc">All Ghost Themes is a comprehensive website that lists every single Ghost theme that has been created. All Ghost Themes tries to ease the search for a theme by putting them all in one place, and showing live demos of each theme to make your search as fast and as easy as possible.</h5><hr> --}}
  <div id="homeContent">
-  <div class="arrow-down-2"></div>
     <table id="indexTable">
       <thead>
         <tr>
@@ -33,11 +28,9 @@
     {{! Each post will be output using this markup }}
     {{#foreach posts}}
         <tr class="tableRows">
-            <td class="tableTitle"><a href="{{url}}">{{title}}</a>
-              <input type="hidden" name="tags" value="{{#foreach tags}}{{name}},{{/foreach}}">
-            </td>
+            <td class="tableTitle"><a href="{{url}}">{{title}}</a></td>
             <td class="tableImage"><a href="{{url}}"><img class="lazy" src="http://cdn.allghostthemes.com/assets/images/{{title}}.jpg" /></a></td>
-            <td class="tdCenter price"></td>
+            <td class="tdCenter">{{#foreach tags}}{{#if @last}}{{name}}{{/if}} {{/foreach}}</td>
             <td id={{title}} class="indexDescription">{{excerpt characters="500"}}</td>
                <script>
                 var desc = $('.indexDescription').text();
@@ -51,25 +44,9 @@
                   };
                 $("td.indexDescription").replaceWith("<td class=\"indexDescriptionSlice\">"+descSlice+"</td>");
                 </script>
-            <td class="tdCenter columns"></td>
+            <td class="tdCenter">{{#foreach tags}}{{#if @first}}{{name}}{{/if}} {{/foreach}}</td>
         </tr>
         {{/foreach}}
-        <script>
-          $(function(){
-  
-            $("tbody tr").each(function(){
-              var tags = $(this).find("input[name='tags']").val();
-              tags = tags.replace(/[A-Za-z-]/g, "");
-              var tags_array = tags.split(",");
-              tags_array = tags_array.filter(String);
-              tags_array.sort();
-              
-              $(this).find(".price").html(tags_array[0]);
-              $(this).find(".columns").html(tags_array[1]);
-            });
-            
-          });
-        </script>
     </tbody>
     </table>
     <script>

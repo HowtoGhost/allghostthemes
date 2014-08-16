@@ -15,14 +15,44 @@
 
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,600,400,300" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{asset "css/normalize.css"}}">
+    <link rel="stylesheet" href="{{asset "css/bootstrap.css"}}">
+    <link rel="stylesheet" href="{{asset "css/design.css"}}">
     <link rel="shortcut icon" type="image" href="{{asset "/images/favicon.ico"}}"/>
 
     
 
     {{! Ghost outputs important style and meta data with this tag }}
-    <div class="navbar navbar-default">
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header navbar">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">{{@blog.title}}</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/tag/popular">Most Popular</a></li>
+        <li><a href="/tag/free">Free</a></li>
+        <li><a href="/tag/favorite">Favorites</a></li>
+        <li><a href="/add-theme">Add Theme</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li id="twitter-menu"><a href="http://twitter.com/howtoghost"><img src="{{asset "images/twitter.png"}}"></img></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    {{!-- <div class="navbar navbar-default">
     <div class="navbar-inner">
       <div class="container">
         <ul class="nav">
@@ -35,7 +65,7 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div> --}}
 
 <!-- Google Analytics -->
 <script>
@@ -71,7 +101,6 @@
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
     <script src="{{asset "js/jquery-1.11.0.min.js"}}"></script>
-    <link rel="stylesheet" href="{{asset "css/bootstrap.min.css"}}">
     <link rel="stylesheet" href="{{asset "css/jquery.dataTables.css"}}">
     <script src="{{asset "js/bootstrap.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/jquery.dataTables.js"}}"></script>
@@ -117,7 +146,14 @@
           g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
         })();
       </script>
-<!-- End Piwik Code -->		  
+<!-- End Piwik Code -->		
+
+    <script>
+      $(document).ready(function() {
+        $('.navbar').show();
+        $('.content').show();
+      });
+    </script>  
 		  
 </body>
 </html>
