@@ -28,9 +28,11 @@
     {{! Each post will be output using this markup }}
     {{#foreach posts}}
         <tr class="tableRows">
-            <td class="tableTitle"><a href="{{url}}">{{title}}</a></td>
+            <td class="tableTitle"><a href="{{url}}">{{title}}</a>
+              <input type="hidden" name="tags" value="{{#foreach tags}}{{name}},{{/foreach}}">
+            </td>
             <td class="tableImage"><a href="{{url}}"><img class="lazy" src="http://cdn.allghostthemes.com/assets/images/{{title}}.jpg" /></a></td>
-            <td class="tdCenter">{{#foreach tags}}{{#if @last}}{{name}}{{/if}} {{/foreach}}</td>
+            <td class="tdCenter price"></td>
             <td id={{title}} class="indexDescription">{{excerpt characters="500"}}</td>
                <script>
                 var desc = $('.indexDescription').text();
@@ -44,9 +46,25 @@
                   };
                 $("td.indexDescription").replaceWith("<td class=\"indexDescriptionSlice\">"+descSlice+"</td>");
                 </script>
-            <td class="tdCenter">{{#foreach tags}}{{#if @first}}{{name}}{{/if}} {{/foreach}}</td>
+            <td class="tdCenter columns"></td>
         </tr>
         {{/foreach}}
+        <script>
+          $(function(){
+  
+            $("tbody tr").each(function(){
+              var tags = $(this).find("input[name='tags']").val();
+              tags = tags.replace(/[A-Za-z-]/g, "");
+              var tags_array = tags.split(",");
+              tags_array = tags_array.filter(String);
+              tags_array.sort();
+              
+              $(this).find(".price").html(tags_array[0]);
+              $(this).find(".columns").html(tags_array[1]);
+            });
+            
+          });
+        </script>
     </tbody>
     </table>
     <script>
