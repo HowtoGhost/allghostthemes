@@ -122,32 +122,6 @@
       })
     </script>
 
-<!-- Piwik -->
-      <script type="text/javascript">
-        var _paq = _paq || [];
-              {{#post}}
-
-      {{#if tags}}
-              var tagCounter=1;
-                {{#foreach tags}}
-                _paq.push(['setCustomVariable',  tagCounter, 'Tag', '{{name}}', 'page']);
-              tagCounter++;
-                {{/foreach}}
-                {{/if}}
-              {{/post}}
-      _paq.push(["trackPageView"]);
-        _paq.push(["enableLinkTracking"]);
-
-        (function() {
-          var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.howtoinstallghost.com/";
-          _paq.push(["setTrackerUrl", u+"piwik.php"]);
-          _paq.push(["setSiteId", "5"]);
-          var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
-          g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
-        })();
-      </script>
-<!-- End Piwik Code -->		
-
     <script>
       $(document).ready(function() {
         $('.navbar').show();
