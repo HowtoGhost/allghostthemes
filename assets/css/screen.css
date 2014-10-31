@@ -698,7 +698,7 @@ margin on the iframe, cause it breaks stuff. */
     /*padding-right: 5px;*/
 }
 
-.dowloadLink {
+.dowloadLink, .demoLink {
     color:#08c;
 }
 

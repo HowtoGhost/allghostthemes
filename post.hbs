@@ -32,6 +32,14 @@ Report problem or change</a></div> -->
             <section class="post-content">
                 {{content}}
             </section>
+
+            <script src={{asset "js/jquery-1.11.0.min.js"}}></script>
+            <script>
+                var demo=$('.themedemo').attr('src')
+                if (demo != "") {
+                    $('.post-content h3').append(" - <a class='demoLink' href='"+demo+"'>Demo</a>")
+                }
+            </script>
 			
 			<!-- Disqus Comment-->
 		    <div id="disqus_thread"></div>
