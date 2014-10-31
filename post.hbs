@@ -35,10 +35,12 @@ Report problem or change</a></div> -->
 
             <script src={{asset "js/jquery-1.11.0.min.js"}}></script>
             <script>
-                var demo=$('.themedemo').attr('src')
+                var demo=$('.themedemo').attr('src');
                 if (demo != "") {
-                    $('.post-content h3').append(" - <a class='demoLink' target='_blank' href='"+demo+"'>Demo</a>")
+                    $('.post-content h3').append(" - <a class='demoLink' target='_blank' href='"+demo+"'>Demo</a>");
                 }
+
+                $('.dowloadLink, moneyLink').attr('target','_blank'); //Adding open in new tab to download/purchase link
             </script>
 			
 			<!-- Disqus Comment-->
