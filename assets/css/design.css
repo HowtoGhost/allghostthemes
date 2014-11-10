@@ -12,7 +12,7 @@
 
 #twitter-menu {height:50px;}
 #twitter-menu a {padding-top:13px;padding-bottom:13px;}
-#twitter-menu a img {width:30px;}
+#twitter-menu a img, #facebook-menu a img {width:30px;height:24px;}
 
 .blog-title {font-family:"Open Sans",sans-serif;font-weight: 100;font-size:10rem;margin:10px auto 10px auto;/* text-shadow: 1px 1px 5px #7b7b7b; */}
 .blog-description {font-family:"Open Sans",sans-serif;font-size:20px;/* text-shadow: 1px 1px 1px #7b7b7b; */}
