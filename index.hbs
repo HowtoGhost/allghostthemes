@@ -36,7 +36,7 @@
             <td class="tableTitle"><a href="{{url}}">{{title}}</a>
               <input type="hidden" name="tags" value="{{#foreach tags}}{{name}},{{/foreach}}">
             </td>
-            <td class="tableImage"><a href="{{url}}"><img class="lazy" src="http://cdn.allghostthemes.com/assets/images/{{title}}.jpg" /></a></td>
+            <td class="tableImage"></td>
             <td class="tdCenter price"></td>
             <td id={{title}} class="indexDescription">{{excerpt characters="500"}}</td>
                <script>
@@ -78,9 +78,9 @@
         //var tableHeight = $(window).height() -135;
           $('#indexTable').dataTable({
             "bAutoWidth": true,
-            
+            "paging": false,
             "bScrollInfinite": true,
-            "bScrollCollapse": true,
+            // "bScrollCollapse": true,
             "sScrollY": "600px",
             "aoColumnDefs": [
               {"sType": "currency", "aTargets":[2]},
