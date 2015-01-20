@@ -37,3 +37,19 @@
 	border-top: 30px solid #2f8cde;
 	margin:auto;
 }
+
+.dataTable {
+	margin: 0;
+}
+
+.dataTables_filter {
+	float: right;
+}
+
+.dataTables_wrapper {
+	position: relative;
+}
+
+.dataTables_scrollBody {
+	border-top: 1px solid #FF0000;
+}
