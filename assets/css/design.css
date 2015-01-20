@@ -37,3 +37,24 @@
 	border-top: 30px solid #2f8cde;
 	margin:auto;
 }
+
+.dataTable {
+	margin: 0;
+}
+
+.dataTables_filter {
+	float: right;
+	margin-bottom: 15px;
+}
+
+.dataTables_wrapper {
+	position: relative;
+}
+
+.dataTables_scrollBody {
+	border-top: 1px solid #FF0000;
+}
+
+.sorting, .sorting_asc, .sorting_desc {
+	cursor: pointer;
+}

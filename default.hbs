@@ -26,7 +26,7 @@
     
 
     {{! Ghost outputs important style and meta data with this tag }}
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header navbar">
@@ -101,10 +101,11 @@
     {{! The main JavaScript file for Casper }}
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script defer type="text/javascript" src="{{asset "js/imageLoad.js"}}"></script>
     <script src="{{asset "js/jquery-1.11.0.min.js"}}"></script>
-    <link rel="stylesheet" href="{{asset "css/jquery.dataTables.css"}}">
+    <link rel="stylesheet" href="{{asset "//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css"}}">
     <script src="{{asset "js/bootstrap.min.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/jquery.dataTables.js"}}"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <!--<script type="text/javascript" src="{{asset "js/jquery.lazy.min.js"}}"></script>-->
     <script>
       jQuery.extend( jQuery.fn.dataTableExt.oSort, {
