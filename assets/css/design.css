@@ -27,7 +27,9 @@
 #home-header {margin-top: 0;padding-top:20px;letter-spacing: 2px;font-family: 'Ubuntu', sans-serif;}
 #homeDesc {margin:auto;font-size: 16px;width:80%;line-height: 1.75;text-align: left;max-width: 1000px;font-family: "Open Sans",sans-serif;}
 
-#homeContent, #indexTable {height:600px;}
+.tag-content, .post-content {
+	margin-top: 60px;
+}
 
 .arrow-down-2 {
 	width: 0; 

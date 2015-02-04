@@ -11,19 +11,19 @@
 </header>
 
 {{! The main content area on the homepage }}
-<main class="content" role="main">
+<main class="content tag-content" role="main">
 {{!-- <h5 id="homeDesc">All Ghost Themes is a comprehensive website that lists every single Ghost theme that has been created. All Ghost Themes tries to ease the search for a theme by putting them all in one place, and showing live demos of each theme to make your search as fast and as easy as possible.</h5><hr> --}}
- <div id="homeContent">
-    <table id="indexTable">
-      <thead>
-        <tr>
-          <th class="tableNameHeader tdCenter">Theme Name</th>
-          <th class="tableDemoHeader tdCenter">Demo</th>
-          <th class="tablePriceHeader tdCenter">Price</th>
-          <th class="tableDescHeader tdCenter">Description</th>
-          <th class="tableColumnHeader tdCenter">Columns</th>
-        </tr>
-      </thead>
+<div id="homeContent">
+   <table id="indexTable">
+     <thead>
+       <tr>
+         <th class="tableNameHeader tdCenter">Theme Name</th>
+         <th class="tableDemoHeader tdCenter">Demo</th>
+         <th class="tablePriceHeader tdCenter">Price</th>
+         <th class="tableDescHeader tdCenter">Description</th>
+         <th class="tableColumnHeader tdCenter">Columns</th>
+       </tr>
+     </thead>
       <tbody>
     {{! Each post will be output using this markup }}
     {{#foreach posts}}
@@ -73,10 +73,10 @@
         //var tableHeight = $(window).height() -135;
           $('#indexTable').dataTable({
             "bAutoWidth": true,
-            
-            "bScrollInfinite": true,
-            "bScrollCollapse": true,
-            "sScrollY": "600px",
+            "paging": false,
+            // "bScrollInfinite": true,
+            // "bScrollCollapse": true,
+            // "sScrollY": "600px",
             "aoColumnDefs": [
               {"sType": "currency", "aTargets":[2]},
               {"bSortable": false, "aTargets":[1]}
