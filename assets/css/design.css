@@ -1,6 +1,6 @@
 .navbar {background-color: #494949 !important;margin-bottom: 0 !important;border-radius: 0 !important;border:none !important;}
 .navbar-default .navbar-nav {font-weight: 300;font-family: 'Open Sans', sans-serif;}
-.navbar-default .navbar-nav > li > a {color:white !important;}
+.navbar-default .navbar-nav > li > a {color:white;}
 .navbar-brand {font-weight: 300;margin-bottom: 0;font-size:24px;color:white;}
 .navbar-default .navbar-brand {color:white !important;font-family: 'Open Sans';letter-spacing: 1px;height:49px;}
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {background-color: #eee;}
