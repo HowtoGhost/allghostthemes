@@ -60,3 +60,7 @@
 .sorting, .sorting_asc, .sorting_desc {
 	cursor: pointer;
 }
+
+.clear {
+	clear:both;
+}
