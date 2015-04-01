@@ -64,3 +64,17 @@
 .clear {
 	clear:both;
 }
+
+.input {
+	font-size: 16px;
+}
+
+.input input {
+	margin-left: 5px;
+	border-radius: 7px;
+}
+
+.input input:focus {
+	outline: none;
+}
+
