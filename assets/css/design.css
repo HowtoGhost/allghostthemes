@@ -27,6 +27,14 @@
 #home-header {margin-top: 0;padding-top:20px;letter-spacing: 2px;font-family: 'Ubuntu', sans-serif;}
 #homeDesc {margin:auto;font-size: 16px;width:80%;line-height: 1.75;text-align: left;max-width: 1000px;font-family: "Open Sans",sans-serif;}
 
+.page {
+	margin-top: 40px;
+}
+
+.page .post-content {
+	margin-top: 10px;
+}
+
 .tag-content, .post-content {
 	margin-top: 60px;
 }
@@ -65,16 +73,16 @@
 	clear:both;
 }
 
-.input {
+.search-input {
 	font-size: 16px;
 }
 
-.input input {
+.search-input input {
 	margin-left: 5px;
 	border-radius: 7px;
 }
 
-.input input:focus {
+.search-input input:focus {
 	outline: none;
 }
 
