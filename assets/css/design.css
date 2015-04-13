@@ -86,3 +86,174 @@
 	outline: none;
 }
 
+/* Announcement Bar */
+
+.nav-top {
+	height: 42px;
+	min-height: 0;
+}
+
+#announcements-container {
+	/*background-color: #bababa;*/
+	line-height: 40px;
+    height: 42px;
+    border-bottom: 2px solid black;
+    padding-top: 0;
+	background: -webkit-linear-gradient(top, #F0F0F0 0%, black 75%); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(#F0F0F0, #e0dddb); /* For Opera 11.1 to 12.0 */
+ 	background: -moz-linear-gradient(#F0F0F0, #e0dddb); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(#F0F0F0 25%, #e0dddb 100%); /* Standard syntax */
+}
+
+#nav-announcements {
+	border-left: 1px solid white;
+}
+
+#nav-announcements li, #announcement-text li {
+	border-left: 4px solid #d6d6d6;
+}
+
+#nav-announcements li a, #announcement-text li a {
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: #666666;
+	line-height: 40px;
+    height: 40px;
+    padding-top: 0;
+}
+
+#nav-announcements li a:hover {
+	background-color: white;
+}
+
+#announcement-text li a:hover {
+	background: none;
+	cursor: default;
+}
+
+#announcement-text {
+	height: 100%;
+}
+
+#announcement-text li {
+	text-align: center;
+	display: table;
+}
+
+#announcement-text li a {
+	height: 100%;
+	display: table-cell;
+	padding: 0;
+	width: 100%;
+	vertical-align: middle;
+	border-right: none;
+}
+
+#announcement-text button {
+  background-color: #be3912;
+  margin-left: 50px;
+  border: 0 none;
+  border-radius: 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 22px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#announcement-text button:hover {
+	background-color: #e0451a;
+}
+
+.announcements-brand {
+	width: 45px;
+	text-align: center;
+	height: 100%;
+	padding: 0;
+}
+
+.announcements-brand img {
+	width: 35px;
+	padding-top: 2.5px;
+}
+
+#announcement-subscribe {
+	height: 30px;
+}
+
+.active-site {
+	background-color: white;
+}
+
+
+@media (max-width: 1072px) {
+	#announcement-text button {
+		margin-left: 25px;
+	}
+}
+
+@media (max-width: 1000px) {
+	#announcement-text button {
+		margin-left: 5px;
+	}
+
+	.navbar-collapse, #announcements-container {
+		padding: 0;
+	}
+}
+
+@media (max-width: 950px) {
+	#announcements-container {
+		height: 82px;
+	}
+	.nav-top {
+		height: 84px;
+	}
+	.announcements-header {
+		display: none;
+	}
+	#announcement-text {
+		border: 1px solid white;
+		border-bottom: none;
+		width: 100%;
+	}
+
+	#announcement-text li {
+		width: 100%;
+		border-right: 4px solid #d6d6d6;
+		height: 100%;
+	}
+
+	#announcement-text li a {
+		height: 100%;
+	}
+
+	#nav-announcements {
+		border-right: 1px solid white;
+		width: 100%;
+	}
+
+	#nav-announcements li {
+		width: 25%;
+		text-align: center
+	}
+
+	#last-announcement-li {
+		border-right: 4px solid #d6d6d6;
+	}
+}
+
+@media (max-width: 767px) {
+	#announcements-container {
+		display: none;
+	}
+	.nav-top {
+		display: none !important; /*Important b/c of the navbar.show in the default.hbs*/
+	}
+}
