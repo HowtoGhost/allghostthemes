@@ -209,12 +209,10 @@
 }
 
 @media (max-width: 950px) {
-	#announcements-container {
+	#announcements-container, .nav-top {
 		height: 82px;
 	}
-	.nav-top {
-		height: 84px;
-	}
+
 	.announcements-header {
 		display: none;
 	}
@@ -250,9 +248,6 @@
 }
 
 @media (max-width: 767px) {
-	#announcements-container {
-		display: none;
-	}
 	.nav-top {
 		display: none !important; /*Important b/c of the navbar.show in the default.hbs*/
 	}
