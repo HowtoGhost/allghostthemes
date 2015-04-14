@@ -135,11 +135,13 @@
 
 #announcement-text {
 	height: 100%;
+	width: calc(100% - 575px);
 }
 
 #announcement-text li {
 	text-align: center;
 	display: table;
+	width: 100%;
 }
 
 #announcement-text li a {

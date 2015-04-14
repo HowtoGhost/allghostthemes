@@ -88,10 +88,6 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<script>
-
-</script>
-
 </head>
 <body class="{{body_class}}">
 
@@ -133,30 +129,11 @@
         $('.navbar').show();
         $('.content').show();
 
-        //Set the correct width for the announcement in the bar
-        var announcementsWidth = ($('.navbar-collapse').width() - ($('#nav-announcements').width()+$('.navbar-brand').width()));
-        if (announcementsWidth > 350) {
-            $('#announcement-text li').width(announcementsWidth+20)
-        } else {
-          $('#announcement-text li').width("");
-        }
-
-        $(window).resize(function() {
-          var announcementsWidth = ($('.navbar-collapse').width() - ($('#nav-announcements').width()+$('.navbar-brand').width()));
-          if (announcementsWidth > 350) {
-            $('#announcement-text li').width(announcementsWidth+20);
-          } else {
-              // $('#announcement-text').width("100%");
-              $('#announcement-text li').width("");
-          }
-        });
-
         //On scroll, make the top 2nd nav fixed to the top
         var secondaryNav = $('#secondary-nav-top'),
         secondaryNavTopPosition = secondaryNav.offset().top;
        
         $(window).on('scroll', function(){
-          console.log($(window).scrollTop());
           
           if($(window).scrollTop() > secondaryNavTopPosition ) {
             secondaryNav.addClass('navbar-fixed-top');  
