@@ -1,0 +1,50 @@
+/*
+ * Datatables Styles
+ */
+
+.dataTable {
+	margin: 0;
+}
+
+.dataTables_filter {
+	float: right;
+	margin-bottom: 15px;
+}
+
+#indexTable_info {
+	padding-top: 0;
+}
+
+.dataTables_wrapper {
+	position: relative;
+}
+
+.dataTables_scrollBody {
+	border-top: 1px solid #FF0000;
+}
+
+.sorting, .sorting_asc, .sorting_desc {
+	cursor: pointer;
+}
+
+.clear {
+	clear:both;
+}
+
+.search-input {
+	font-size: 16px;
+
+	input {
+		margin-left: 5px;
+		border-radius: 7px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.tableImage a img {
+	max-width: 100%;
+	height: auto;
+}

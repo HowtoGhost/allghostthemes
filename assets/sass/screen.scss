@@ -1,0 +1,20 @@
+//
+// WARNING: Don't edit this file by hand! Instead, you should be editing the files in assets/sass
+// (More information at http://sass-lang.com/)
+
+//
+// Patterns: Groups of Styles
+// --------------------------------------------------
+@import 'patterns/datatables';
+
+//
+// Components: Groups of Patterns
+// --------------------------------------------------
+@import 'components/navigation';
+@import 'components/announcement';
+
+//
+// Layouts: Groups of Components
+// --------------------------------------------------
+@import 'layouts/global';
+@import 'layouts/home';
