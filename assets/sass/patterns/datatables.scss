@@ -44,7 +44,21 @@
 	}
 }
 
-.tableImage a img {
-	max-width: 100%;
-	height: auto;
+.tableImage {
+	width: 250px;
+	height: 100px;
+	text-align: center;
+
+	p {
+		  background-color: gray;
+		  padding: 15px;
+		  border-radius: 20px;
+		  color: white;
+	}
+	a {
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
 }
