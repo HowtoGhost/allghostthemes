@@ -4,7 +4,13 @@
     the {body} of the default.hbs template, which contains our header/footer. }}
 
 <header>
+  <link rel="stylesheet" href="{{asset "bower_components/DataTables/media/css/jquery.dataTables.min.css"}}">
+  <link rel="stylesheet" href="{{asset "bower_components/datatables-responsive/css/dataTables.responsive.css"}}">
 
+  <script type="text/javascript" src="{{asset "bower_components/DataTables/media/js/jquery.dataTables.min.js"}}"></script>
+  <script type="text/javascript" src="{{asset "bower_components/datatables-responsive/js/dataTables.responsive.js"}}"></script>
+
+  <script type="text/javascript" src="{{asset "js/datatables-initialize.js"}}"></script>
 </header>
 
 {{! The main content area on the homepage }}
@@ -73,28 +79,7 @@
     </table>
     <script>
       $(document).ready(function() {
-        $('.content').show();
-
-        $('#indexTable').dataTable({
-          paging:   false,
-          responsive: true,
-          responsive: {
-              details: {
-                  type: 'column',
-                  target: -1
-              }
-          },
-          dom:     'Tl<"datatables-flex"i<"search-input"f>><"clear">rtp',
-          columnDefs:   [
-            {"sType": "currency", "aTargets":[2]},
-            {"bSortable": false, "aTargets":[1]},
-            {classname: "tablet-p", "targets": [2,3,4]},
-            {className: 'control', orderable: false, targets:   -1}
-          ],
-          oLanguage:    {
-            "sInfo": "Number of Themes = _TOTAL_"
-          }
-        } );
+        datatableInitialize();
       } );
     </script>
     </div>

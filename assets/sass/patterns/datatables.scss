@@ -35,6 +35,7 @@
 	font-size: 16px;
 	float: none;
     align-self: center;
+    -webkit-align-self: center;
 
 	input {
 		margin-left: 5px;
@@ -90,6 +91,10 @@
     width: 5px;
     white-space: normal;
     font-size: 18px;
+
+    &:before {
+    	top: auto;
+    }
 }
 
 .tableImage {
@@ -110,11 +115,10 @@
 
 #indexTable {
     border-collapse: collapse;
-}
 
-#indexTable td, #indexTable thead tr th{
-    border: 1px solid #ddd;
-
+    td, thead tr th {
+    	border: 1px solid #ddd;
+    }
 }
 
 .datatables-flex {
@@ -140,6 +144,7 @@
     font-weight: bold;
     float: none;
     align-self: center;
+    -webkit-align-self: center;
     margin-left: 25px;
 }
 
@@ -159,10 +164,6 @@
 
 .dowloadLink, .demoLink {
     color: #08c;
-}
-
-.tableTitle:before {
-	top: auto;
 }
 
 .control {

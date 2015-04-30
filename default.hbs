@@ -20,15 +20,11 @@
     <link href='//fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{asset "css/normalize.css"}}">
     <link rel="shortcut icon" type="image" href="{{asset "/images/favicon.ico"}}"/>
-    <link rel="stylesheet" href="{{asset "bower_components/DataTables/media/css/jquery.dataTables.min.css"}}">
-    <link rel="stylesheet" href="{{asset "bower_components/datatables-responsive/css/dataTables.responsive.css"}}">
 
     <link rel="stylesheet" href="{{asset "css/style.css"}}">
 
 
     <script type="text/javascript" src="{{asset "bower_components/jquery/jquery.min.js"}}"></script>
-    <script type="text/javascript" src="{{asset "bower_components/DataTables/media/js/jquery.dataTables.min.js"}}"></script>
-    <script type="text/javascript" src="{{asset "bower_components/datatables-responsive/js/dataTables.responsive.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/announcement-nav.js"}}"></script>
 
     <!-- Google Analytics -->
@@ -130,7 +126,7 @@
      
       $(window).on('scroll', function(){
         secondaryNavTopPosition = secondaryNav.offset().top;
-        
+
         if($(window).scrollTop() >= secondaryNavTopPosition -2 && secondaryNavTopPosition > 0) {
           secondaryNav.addClass('navbar-fixed-top');  
         } else {

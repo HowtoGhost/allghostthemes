@@ -9,14 +9,13 @@
 	-webkit-align-items: center;
   	justify-content: center;
   	-webkit-justify-content: center;
-	padding: 10px;
 	list-style-type: none;
 	font-size: 16px;
 	flex-wrap: wrap;
 	-webkit-flex-wrap: wrap;
-	padding: 5px 0;
 	margin: 0;
 	background-color: #494949;
+	padding: 0;
 
 	li {
 		text-align: center;
@@ -32,8 +31,8 @@
 	@media (max-width: 760px) {
 		padding-top: 0;
 		flex-wrap: nowrap;
-		flex-direction: column;
 		-webkit-flex-wrap: nowrap;
+		flex-direction: column;
 		-webkit-flex-direction: column;
 		background-color: #f6f6f6;
 	}
@@ -56,15 +55,25 @@
 }
 
 .main-img-flex {
-	height: 35px;
-	width: 35px;
 	padding: 0 7.5px;
+	align-self: stretch;
+	-webkit-align-self: stretch;
+	display: flex;
+	display: -webkit-flex;
+	align-content: center;
+	-webkit-align-content: center;
 
 	a {
+		align-self: center;
+		-webkit-align-self: center;
+		display: flex;
+		display: -webkit-flex;
+
 		img {
 			margin: 3px;
-			// width: 30px;
 			height: 30px;
+			align-self: center;
+			-webkit-align-self: center;
 		}
 	}
 
@@ -84,10 +93,22 @@
 .main-link-flex {
 	font-family: 'Open Sans';
 	font-size: 14px;
-	padding: 0 25px;
+	padding: 10px 25px;
+	align-self: stretch;
+	-webkit-align-self: stretch;
+	display: flex;
+	display: -webkit-flex;
+	align-content: center;
+	-webkit-align-content: center;
+	justify-content: center;
+	-webkit-justify-content: center;
 
 	a {
 		text-decoration: none;
+		// flex: 1;
+		align-self: center;
+		-webkit-align-self: center;
+
 	}
 
 	&:hover {
