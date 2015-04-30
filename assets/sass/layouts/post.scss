@@ -21,3 +21,33 @@
 		font-size: 24px;
 	}
 }
+
+.next-steps {
+	margin-top: 35px;
+	border: 1px solid #494949;
+	font-family: 'Open Sans', sans-serif;
+	padding: 10px;
+
+	.next-steps-header {
+		margin: 0;
+		font-size: 26px;
+		font-weight: bold;
+		font-family: inherit;
+		padding-bottom: 15px;
+	}
+
+	.next-steps-step {
+		margin: 0;
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	a {
+		text-decoration: none;
+		color: #428bca;
+	}
+
+	.next-steps-info {
+		padding-bottom: 10px;
+	}
+}
