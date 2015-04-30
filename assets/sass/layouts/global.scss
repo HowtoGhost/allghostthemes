@@ -6,7 +6,6 @@ body {
 	font-size: 1.5rem;
 }
 .content {
-	display: none;
 	margin-top: 25px;
 }
 
@@ -29,4 +28,8 @@ body {
 	border-right: 40px solid transparent;	
 	border-top: 30px solid #2f8cde;
 	margin:auto;
+}
+
+.post.page {
+	padding-top: 10px;
 }

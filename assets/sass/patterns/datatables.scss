@@ -7,8 +7,8 @@
 }
 
 .dataTables_filter {
-	float: right;
-	margin-bottom: 15px;
+	flex: 1;
+	-webkit-flex: 1;
 }
 
 #indexTable_info {
@@ -33,6 +33,8 @@
 
 .search-input {
 	font-size: 16px;
+	float: none;
+    align-self: center;
 
 	input {
 		margin-left: 5px;
@@ -61,4 +63,108 @@
 			height: auto;
 		}
 	}
+}
+
+
+.dataTables_scroll {
+    padding-top: 15px;
+}
+
+#indexTable_length {
+    margin-left: 10px;
+}
+
+#indexTable_filter {
+    margin-right: 10px;
+}
+
+.tableNameHeader {
+    white-space: nowrap;
+
+    @media (max-width: 760px) {
+    	white-space: normal;
+    }
+}
+
+.tableTitle {
+    width: 5px;
+    white-space: normal;
+    font-size: 18px;
+}
+
+.tableImage {
+    width: 250px;
+}
+
+.tablePriceHeader, .tableColumnHeader{
+    width: 5px;
+}
+
+.tdCenter {
+    text-align:center !important;
+}
+
+.tableRows td {
+    vertical-align: middle;
+}
+
+#indexTable {
+    border-collapse: collapse;
+}
+
+#indexTable td, #indexTable thead tr th{
+    border: 1px solid #ddd;
+
+}
+
+.datatables-flex {
+	display: flex;
+	display: -webkit-flex;
+	flex-wrap: wrap-reverse;
+	-webkit-flex-wrap: wrap-reverse;
+
+	div {
+		min-width: 300px;
+		margin-bottom: 15px;
+
+		@media (max-width: 615px) {
+			width: 100%;
+		}
+	}
+}
+
+.dataTables_info {
+	flex: 1;
+	-webkit-flex: 1;
+    font-size: 20px;
+    font-weight: bold;
+    float: none;
+    align-self: center;
+    margin-left: 25px;
+}
+
+.dataTables_filter label input {
+    margin-top: 5px;
+}
+
+.shareIcons {
+    float: right;
+}
+
+#problemEmail {
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 12.5px;
+}
+
+.dowloadLink, .demoLink {
+    color: #08c;
+}
+
+.tableTitle:before {
+	top: auto;
+}
+
+.control {
+	width: 10px;
 }

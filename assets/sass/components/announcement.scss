@@ -20,6 +20,9 @@
 
 	li {
 		text-align: center;
+		align-self: stretch;
+  		display: flex;
+  		align-content: center;
 	}
 
 	@media (max-width: 760px) {
@@ -48,6 +51,8 @@
 
 	a {
 		text-decoration: none;
+		flex: 1;
+  		align-self: center;
 
 		&:hover {
 			color: black;
@@ -67,6 +72,8 @@
 
 	a {
 		text-decoration: none;
+		flex: 1;
+  		align-self: center;
 
 		&:hover {
 			color: black;

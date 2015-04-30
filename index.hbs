@@ -16,14 +16,15 @@
 </div>
  <div id="homeContent">
   <div class="arrow-down-2"></div>
-    <table id="indexTable">
+    <table id="indexTable" class="display responsive" width="100%">
       <thead>
         <tr>
           <th class="tableNameHeader tdCenter">Theme Name</th>
           <th class="tableDemoHeader tdCenter">Demo</th>
-          <th class="tablePriceHeader tdCenter">Price</th>
-          <th class="tableDescHeader tdCenter">Description</th>
-          <th class="tableColumnHeader tdCenter">Columns</th>
+          <th class="tablePriceHeader tdCenter min-tablet-l">Price</th>
+          <th class="tableDescHeader tdCenter min-tablet-l">Description</th>
+          <th class="tableColumnHeader tdCenter min-tablet-l">Columns</th>
+          <th class="max-tablet-l"></th>
         </tr>
       </thead>
       <tbody>
@@ -49,6 +50,7 @@
                 $("td.indexDescription").replaceWith("<td class=\"indexDescriptionSlice\">"+descSlice+"</td>");
                 </script>
             <td class="tdCenter columns"></td>
+            <td></td>
         </tr>
         {{/foreach}}
         <script>
@@ -75,10 +77,19 @@
 
         $('#indexTable').dataTable({
           paging:   false,
-          dom:     'Tli<"search-input"f><"clear">rtp',
+          responsive: true,
+          responsive: {
+              details: {
+                  type: 'column',
+                  target: -1
+              }
+          },
+          dom:     'Tl<"datatables-flex"i<"search-input"f>><"clear">rtp',
           columnDefs:   [
             {"sType": "currency", "aTargets":[2]},
-            {"bSortable": false, "aTargets":[1]}
+            {"bSortable": false, "aTargets":[1]},
+            {classname: "tablet-p", "targets": [2,3,4]},
+            {className: 'control', orderable: false, targets:   -1}
           ],
           oLanguage:    {
             "sInfo": "Number of Themes = _TOTAL_"
