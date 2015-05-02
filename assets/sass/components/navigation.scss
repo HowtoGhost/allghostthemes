@@ -1,0 +1,145 @@
+/*
+ * Styles for the Navigation Bar
+ */
+
+.main-nav-flex {
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	-webkit-align-items: center;
+  	justify-content: center;
+  	-webkit-justify-content: center;
+	list-style-type: none;
+	font-size: 16px;
+	margin: 0;
+	background-color: #494949;
+	padding: 0;
+
+	li {
+		text-align: center;
+
+		a {
+			color: white;
+			text-decoration: none;
+			font-weight: 300;
+		 	font-family: 'Open Sans', sans-serif;
+		}
+	}
+
+	@media (max-width: 760px) {
+		padding-top: 0;
+		flex-wrap: nowrap;
+		-webkit-flex-wrap: nowrap;
+		flex-direction: column;
+		-webkit-flex-direction: column;
+		background-color: #f6f6f6;
+	}
+}
+
+.main-brand-flex {
+	margin-right: auto;
+	margin-left: 25px;
+	font-size: 24px;
+
+	@media (max-width: 760px) {
+		margin: 0;
+		background-color: #494949;
+		width: 100%;
+		border-radius: 0;
+		font-size: 36px;
+		padding: 10px 0;
+		margin-bottom: 10px;
+	}
+}
+
+.main-img-flex {
+	padding: 0 7.5px;
+	align-self: stretch;
+	-webkit-align-self: stretch;
+	display: flex;
+	display: -webkit-flex;
+	align-content: center;
+	-webkit-align-content: center;
+
+	a {
+		align-self: center;
+		-webkit-align-self: center;
+		display: flex;
+		display: -webkit-flex;
+
+		img {
+			margin: 3px;
+			height: 30px;
+			align-self: center;
+			-webkit-align-self: center;
+		}
+	}
+
+	&:hover {
+		background-color: white;
+
+		a {
+			color: black;
+		}
+	}
+
+	@media (max-width: 760px) {
+		display: none;
+	}
+}
+
+.main-link-flex {
+	font-family: 'Open Sans';
+	font-size: 14px;
+	padding: 10px 25px;
+	align-self: stretch;
+	-webkit-align-self: stretch;
+	display: flex;
+	display: -webkit-flex;
+	align-content: center;
+	-webkit-align-content: center;
+	justify-content: center;
+	-webkit-justify-content: center;
+
+	a {
+		text-decoration: none;
+		// flex: 1;
+		align-self: center;
+		-webkit-align-self: center;
+
+	}
+
+	&:hover {
+		background-color: white;
+
+		a {
+			color: black;
+		}
+	}
+
+	@media (max-width: 875px) {
+		padding: 0 10px;
+	}
+
+	@media (max-width: 760px) {
+		width: 90%;
+		background-color: #494949;
+		border-radius: 20px;
+		margin-bottom: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 22px;
+  		padding: 10px;
+	}
+}
+
+.navbar-fixed-top {
+	position: fixed;
+  	width: 100%;
+  	top: 0;
+  	z-index: 100;
+
+  	@media (max-width: 760px) {
+		position: relative;
+	}
+}

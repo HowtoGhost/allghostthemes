@@ -1,0 +1,31 @@
+/*
+ * Global Styles
+ */
+
+body {
+	font-size: 1.5rem;
+}
+.content {
+	margin-top: 25px;
+}
+
+.page {
+	margin-top: 40px;
+
+	.post-content {
+		margin-top: 10px;
+	}
+}
+
+.arrow-down-2 {
+	width: 0; 
+	height: 0; 
+	border-left: 40px solid transparent; 
+	border-right: 40px solid transparent;	
+	border-top: 30px solid #2f8cde;
+	margin:auto;
+}
+
+.post.page {
+	padding-top: 10px;
+}

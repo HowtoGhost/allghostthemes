@@ -1,0 +1,8 @@
+{
+  "name": "All Ghost Themes",
+  "dependencies": {
+    "jquery": "1.10",
+    "DataTables": "latest",
+    "datatables-responsive": "latest"
+  }
+}

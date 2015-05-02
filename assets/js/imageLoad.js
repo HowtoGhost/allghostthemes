@@ -1,5 +1,6 @@
 //Loads images and then initializes Datatables
-$(window).load(function() {
+
+function loadAllImages() {
 	var tableTitle = $('.tableImage');
 	var imageTitle = $('.tableTitle a');
 	var i = 0;
@@ -7,6 +8,24 @@ $(window).load(function() {
 	
 	for (i; i < tableTitle.length; i++) {
 		var imageLink = imageTitle[i].innerText.toLowerCase();
-		$('.tableImage')[i].innerHTML = "<a href='/" + imageLink + "/'" + "><img src='http://cdn.allghostthemes.com/assets/images/" + encodeURI(imageTitle[i].innerText) + ".jpg' /></a>";
+		$('.tableImage')[i].innerHTML = "<a href='/" + imageLink + "/'" + "><img src='//cdn.allghostthemes.com/assets/images/" + encodeURI(imageTitle[i].innerText) + ".jpg' /></a>";
+	}
+}
+
+function loadSingleImage() {
+	$('.tableImage').click(function() {
+		var imageTitle = $(this).prev('.tableTitle').children('a').html();
+		var imageLink = imageTitle.toLowerCase();
+		console.log($(this).html());
+
+		$(this).html("<a href='/" + imageLink + "/'" + "><img src='//cdn.allghostthemes.com/assets/images/" + encodeURI(imageTitle) + ".jpg' /></a>");
+	})
+}
+
+$(window).load(function() {
+	if ($(window).width() > 760) {
+		loadAllImages();
+	} else {
+		loadSingleImage();
 	}
 });

@@ -1,5 +1,6 @@
-<<<<<<< HEAD
 .DS_Store
-=======
 npm-debug.log
->>>>>>> ImageLoader
+assets/css/style.css
+.sass-cache
+
+assets/css/style.css.map

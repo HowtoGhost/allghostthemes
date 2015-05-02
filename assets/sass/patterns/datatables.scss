@@ -1,0 +1,171 @@
+/*
+ * Datatables Styles
+ */
+
+.dataTable {
+	margin: 0;
+}
+
+.dataTables_filter {
+	flex: 1;
+	-webkit-flex: 1;
+}
+
+#indexTable_info {
+	padding-top: 0;
+}
+
+.dataTables_wrapper {
+	position: relative;
+}
+
+.dataTables_scrollBody {
+	border-top: 1px solid #FF0000;
+}
+
+.sorting, .sorting_asc, .sorting_desc {
+	cursor: pointer;
+}
+
+.clear {
+	clear:both;
+}
+
+.search-input {
+	font-size: 16px;
+	float: none;
+    align-self: center;
+    -webkit-align-self: center;
+
+	input {
+		margin-left: 5px;
+		border-radius: 7px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.tableImage {
+	width: 250px;
+	height: 100px;
+	text-align: center;
+
+	p {
+		  background-color: gray;
+		  padding: 15px;
+		  border-radius: 20px;
+		  color: white;
+	}
+	a {
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}
+
+
+.dataTables_scroll {
+    padding-top: 15px;
+}
+
+#indexTable_length {
+    margin-left: 10px;
+}
+
+#indexTable_filter {
+    margin-right: 10px;
+}
+
+.tableNameHeader {
+    white-space: nowrap;
+
+    @media (max-width: 760px) {
+    	white-space: normal;
+    }
+}
+
+.tableTitle {
+    width: 5px;
+    white-space: normal;
+    font-size: 18px;
+
+    &:before {
+    	top: auto;
+    }
+}
+
+.tableImage {
+    width: 250px;
+}
+
+.tablePriceHeader, .tableColumnHeader{
+    width: 5px;
+}
+
+.tdCenter {
+    text-align:center !important;
+}
+
+.tableRows td {
+    vertical-align: middle;
+}
+
+#indexTable {
+    border-collapse: collapse;
+
+    td, thead tr th {
+    	border: 1px solid #ddd;
+    }
+}
+
+.datatables-flex {
+	display: flex;
+	display: -webkit-flex;
+	flex-wrap: wrap-reverse;
+	-webkit-flex-wrap: wrap-reverse;
+
+	div {
+		min-width: 300px;
+		margin-bottom: 15px;
+
+		@media (max-width: 615px) {
+			width: 100%;
+		}
+	}
+}
+
+.dataTables_info {
+	flex: 1;
+	-webkit-flex: 1;
+    font-size: 20px;
+    font-weight: bold;
+    float: none;
+    align-self: center;
+    -webkit-align-self: center;
+    margin-left: 25px;
+}
+
+.dataTables_filter label input {
+    margin-top: 5px;
+}
+
+.shareIcons {
+    float: right;
+}
+
+#problemEmail {
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 12.5px;
+}
+
+.dowloadLink, .demoLink {
+    color: #08c;
+}
+
+.control {
+	width: 10px;
+}

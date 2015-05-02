@@ -16,13 +16,16 @@
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,600,400,300" />
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}" />
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{asset "css/normalize.css"}}">
-    <link rel="stylesheet" href="{{asset "css/design.css"}}">
     <link rel="shortcut icon" type="image" href="{{asset "/images/favicon.ico"}}"/>
-    <script type="text/javascript" src={{asset "js/jquery.min.js"}}></script>
+
+    <link rel="stylesheet" href="{{asset "css/style.css"}}">
+
+
+    <script type="text/javascript" src="{{asset "bower_components/jquery/jquery.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/announcement-nav.js"}}"></script>
 
     <!-- Google Analytics -->
     <script>
@@ -36,134 +39,101 @@
 
     </script>
     <!-- End Google Analytics -->
-
-  <nav class="navbar navbar-default nav-top nav-announcement" role="navigation">
-    <div class="container-fluid" id="announcements-container">
-      <div class="navbar-header announcements-header">
-        <a class="navbar-brand announcements-brand"><img src="/assets/favicon.ico" \></a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div>
-        <ul id="nav-announcements" class="nav navbar-nav navbar-left">
-          <li><a href="/">Ghost for Beginners</a></li>
-          <li><a href="https://allaboutghost.com">All About Ghost</a></li>
-          <li class="active-site"><a href="https://allghostthemes.com">All Ghost Themes</a></li>
-          <li id="last-announcement-li"><a href="https://howtoinstallghost.com">How to Install Ghost</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-left" id="announcement-text">
-          <li>
-              <a href="https://ghostforbeginners.com/ebook">Get updates on our upcoming eBook! <button id="announcement-subscribe">Subscribe</button> </a>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-    {{! Ghost outputs important style and meta data with this tag }}
-  <nav class="navbar navbar-default" role="navigation" id="secondary-nav-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header navbar">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">{{@blog.title}}</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/tag/popular">Most Popular</a></li>
-        <li><a href="/tag/free">Free</a></li>
-        <li><a href="/tag/favorite">Favorites</a></li>
-        <li><a href="/add-theme">Add Theme</a></li>
-        <li><a href="/resources">Resources</a></li>
-        <li id="twitter-menu"><a href="http://twitter.com/howtoghost"><img src="{{asset "images/twitter.png"}}"></img></a></li>
-        <li id="facebook-menu"><a href="http://facebook.com/howtoghost"><img src="{{asset "images/facebook.png"}}"></img></a></li>
-     </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-<script>
-
-</script>
-
 </head>
 <body class="{{body_class}}">
+  <div id="nav-announcement">
+    <ul class="nav-flex">
+      <li class="nav-brand-flex">
+        <a href="https://allghostthemes.com"><img src="/assets/favicon.ico" \></a>
+      </li>
+      <li class="nav-link-flex">
+        <a href="https://ghostforbeginners.com">Ghost for Beginners</a>
+      </li>
+      <li class="nav-link-flex">
+        <a href="https://allaboutghost.com">All About Ghost</a>
+      </li>
+      <li class="nav-link-flex active-site">
+        <a href="https://allghostthemes.com">All Ghost Themes</a>
+      </li>
+      <li class="nav-link-flex">
+        <a href="https://howtoinstallghost.com">How to Install Ghost</a>
+      </li>
+      <li class="nav-action-flex">
+        <a href="https://ghostforbeginners.com/ebook">Get updates on our upcoming eBook! <button id="announcement-subscribe">Subscribe</button> </a>
+      </li>
+    </ul>
+  </div>
 
-    {{! Everything else gets inserted here }}
-    {{{body}}}
+  <div id="main-nav-container">
+    <ul class="main-nav-flex">
+      <li class="main-brand-flex">
+        <a href="/">{{@blog.title}}</a>
+      </li>
+      <li class="main-link-flex">
+        <a href="/tag/popular">Most Popular</a>
+      </li>
+      <li class="main-link-flex">
+        <a href="/tag/free">Free</a>
+      </li>
+      <li class="main-link-flex">
+        <a href="/tag/favorite">Favorites</a>
+      </li>
+      <li class="main-link-flex">
+        <a href="/add-theme">Add Theme</a>
+      </li>
+      <li class="main-link-flex">
+        <a href="/resources">Resources</a>
+      </li>
+      <li id="twitter-menu" class="main-img-flex">
+        <a href="http://twitter.com/howtoghost"><img src="{{asset "images/twitter.png"}}"></img></a>
+      </li>
+      <li id="facebook-menu" class="main-img-flex">
+        <a href="http://facebook.com/howtoghost"><img src="{{asset "images/facebook.png"}}"></img></a>
+      </li>
+    </ul>
+  </div>
 
-    {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
+  {{! Everything else gets inserted here }}
+  {{{body}}}
 
-    {{! The main JavaScript file for Casper }}
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-    <script defer type="text/javascript" src="{{asset "js/imageLoad.js"}}"></script>
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
-    <script src="{{asset "js/bootstrap.min.js"}}"></script>
-    <script type="text/javascript" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
-    <!--<script type="text/javascript" src="{{asset "js/jquery.lazy.min.js"}}"></script>-->
-    <script>
-      jQuery.extend( jQuery.fn.dataTableExt.oSort, {
-          "currency-pre": function ( a ) {
-              a = (a==="-") ? 0 : a.replace( /[^\d\-\.]/g, "" );
-              return parseFloat( a );
-          },
-       
-          "currency-asc": function ( a, b ) {
-              return a - b;
-          },
-       
-          "currency-desc": function ( a, b ) {
-              return b - a;
-          }
-      })
-    </script>
+  {{! The main JavaScript file for Casper }}
+  <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+  <script defer type="text/javascript" src="{{asset "js/imageLoad.js"}}"></script>
 
-    <script>
-      $(document).ready(function() {
-        //Dont show these until they are ready and all the posts are loaded
-        //Stops a weird milisecond of no css
-        $('.navbar').show();
-        $('.content').show();
-
-        //Set the correct width for the announcement in the bar
-        var announcementsWidth = ($('.navbar-collapse').width() - ($('#nav-announcements').width()+$('.navbar-brand').width()));
-        if (announcementsWidth > 350) {
-            $('#announcement-text li').width(announcementsWidth+20)
-        } else {
-          $('#announcement-text li').width("");
+  <script>
+    jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+        "currency-pre": function ( a ) {
+            a = (a==="-") ? 0 : a.replace( /[^\d\-\.]/g, "" );
+            return parseFloat( a );
+        },
+     
+        "currency-asc": function ( a, b ) {
+            return a - b;
+        },
+     
+        "currency-desc": function ( a, b ) {
+            return b - a;
         }
+    })
+  </script>
 
-        $(window).resize(function() {
-          var announcementsWidth = ($('.navbar-collapse').width() - ($('#nav-announcements').width()+$('.navbar-brand').width()));
-          if (announcementsWidth > 350) {
-            $('#announcement-text li').width(announcementsWidth+20);
-          } else {
-              // $('#announcement-text').width("100%");
-              $('#announcement-text li').width("");
-          }
-        });
-
-        //On scroll, make the top 2nd nav fixed to the top
-        var secondaryNav = $('#secondary-nav-top'),
+  <script>
+    $(document).ready(function() {
+      //On scroll, make the top 2nd nav fixed to the top
+      var secondaryNav = $('#main-nav-container');
+      secondaryNavTopPosition = secondaryNav.offset().top;
+     
+      $(window).on('scroll', function(){
         secondaryNavTopPosition = secondaryNav.offset().top;
-       
-        $(window).on('scroll', function(){
-          
-          if($(window).scrollTop() > secondaryNavTopPosition ) {
-            secondaryNav.addClass('navbar-fixed-top');  
-          } else {
-            secondaryNav.removeClass('navbar-fixed-top');
-          }
-        });
+
+        if($(window).scrollTop() >= secondaryNavTopPosition -2 && secondaryNavTopPosition > 0) {
+          secondaryNav.addClass('navbar-fixed-top');  
+        } else {
+          secondaryNav.removeClass('navbar-fixed-top');
+        }
       });
-    </script>  
+    });
+  </script>  
 </body>
 </html>
