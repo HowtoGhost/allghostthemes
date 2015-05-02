@@ -18,7 +18,9 @@ function datatableInitialize() {
         {className: 'control', orderable: false, targets:   -1}
       ],
       oLanguage:    {
-        "sInfo": "Number of Themes = _TOTAL_"
+        "sInfo": "Number of Themes = _TOTAL_",
+        "sInfoEmpty": "Number of Themes = _TOTAL_",
+        "sInfoFiltered": " (filtered from _MAX_)"
       }
     } );
 }
