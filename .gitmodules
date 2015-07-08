@@ -1,0 +1,3 @@
+[submodule "global-resources"]
+	path = global-resources
+	url = git@github.com:howtoinstallghost/global-resources.git

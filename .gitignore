@@ -1,6 +1,7 @@
 .DS_Store
 npm-debug.log
-assets/css/style.css
+assets/css/style.css*
 .sass-cache
-
-assets/css/style.css.map
+partials/navigation*
+partials/sidebar*
+partials/footer*
