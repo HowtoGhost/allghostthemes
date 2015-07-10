@@ -19,13 +19,12 @@
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{asset "css/normalize.css"}}">
-    <link rel="shortcut icon" type="image" href="{{asset "/images/favicon.ico"}}"/>
+    <link rel="shortcut icon" href="/global-resources/icons/how-to-ghost_logo_favicon.ico">
 
     <link rel="stylesheet" href="{{asset "css/style.css"}}">
 
 
     <script type="text/javascript" src="{{asset "bower_components/jquery/jquery.min.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/announcement-nav.js"}}"></script>
 
 </head>
 <body class="{{body_class}}">
@@ -57,23 +56,5 @@
         }
     })
   </script>
-
-  <script>
-    $(document).ready(function() {
-      //On scroll, make the top 2nd nav fixed to the top
-      var secondaryNav = $('#main-nav-container');
-      secondaryNavTopPosition = secondaryNav.offset().top;
-     
-      $(window).on('scroll', function(){
-        secondaryNavTopPosition = secondaryNav.offset().top;
-
-        if($(window).scrollTop() >= secondaryNavTopPosition -2 && secondaryNavTopPosition > 0) {
-          secondaryNav.addClass('navbar-fixed-top');  
-        } else {
-          secondaryNav.removeClass('navbar-fixed-top');
-        }
-      });
-    });
-  </script>  
 </body>
 </html>
