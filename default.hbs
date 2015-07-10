@@ -25,6 +25,8 @@
 
 
     <script type="text/javascript" src="{{asset "bower_components/jquery/jquery.min.js"}}"></script>
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
 
 </head>
 <body class="{{body_class}}">
@@ -34,6 +36,9 @@
   {{{body}}}
 
   {{> footer}}
+
+  {{! Ghost outputs important scripts and data with this tag }}
+  {{ghost_foot}}
 
   {{! The main JavaScript file for Casper }}
   <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
