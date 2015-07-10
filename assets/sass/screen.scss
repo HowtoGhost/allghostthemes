@@ -10,8 +10,9 @@
 //
 // Components: Groups of Patterns
 // --------------------------------------------------
-@import 'components/navigation';
-@import 'components/announcement';
+@import '../../global-resources/sass/navigation';
+@import '../../global-resources/sass/footer';
+@import '../../global-resources/sass/sidebar';
 
 //
 // Layouts: Groups of Components
