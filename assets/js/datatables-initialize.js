@@ -15,7 +15,8 @@ function datatableInitialize() {
         {"sType": "currency", "aTargets":[2]},
         {"bSortable": false, "aTargets":[1]},
         {classname: "tablet-p", "targets": [2,3,4]},
-        {className: 'control', orderable: false, targets:   -1}
+        {className: 'control', orderable: false, targets:   -1},
+        {"width": "250px", "targets": 1}
       ],
       oLanguage:    {
         "sInfo": "Number of Themes = _TOTAL_",

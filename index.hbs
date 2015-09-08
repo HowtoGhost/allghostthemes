@@ -4,13 +4,7 @@
     the {body} of the default.hbs template, which contains our header/footer. }}
 
 <header>
-  <link rel="stylesheet" href="{{asset "bower_components/DataTables/media/css/jquery.dataTables.min.css"}}">
-  <link rel="stylesheet" href="{{asset "bower_components/datatables-responsive/css/dataTables.responsive.css"}}">
-
-  <script type="text/javascript" src="{{asset "bower_components/DataTables/media/js/jquery.dataTables.min.js"}}"></script>
-  <script type="text/javascript" src="{{asset "bower_components/datatables-responsive/js/dataTables.responsive.js"}}"></script>
-
-  <script type="text/javascript" src="{{asset "js/datatables-initialize.js"}}"></script>
+  
 </header>
 
 {{! The main content area on the homepage }}
@@ -40,7 +34,7 @@
             <td class="tableTitle"><a href="{{url}}">{{title}}</a>
               <input type="hidden" name="tags" value="{{#foreach tags}}{{name}},{{/foreach}}">
             </td>
-            <td class="tableImage"><p>Load Image</p></td>
+            <td class="tableImage" style="max-width:250px;"><p>Load Image</p></td>
             <td class="tdCenter price"></td>
             <td id={{title}} class="indexDescription">{{excerpt characters="500"}}</td>
                <script>
@@ -77,6 +71,14 @@
         </script>
     </tbody>
     </table>
+
+    <link rel="stylesheet" href="{{asset "bower_components/DataTables/media/css/jquery.dataTables.min.css"}}">
+    <link rel="stylesheet" href="{{asset "bower_components/datatables-responsive/css/dataTables.responsive.css"}}">
+
+    <script type="text/javascript" src="{{asset "bower_components/DataTables/media/js/jquery.dataTables.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "bower_components/datatables-responsive/js/dataTables.responsive.js"}}"></script>
+
+    <script type="text/javascript" src="{{asset "js/datatables-initialize.js"}}"></script>
     <script>
       $(document).ready(function() {
         datatableInitialize();

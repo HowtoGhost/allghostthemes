@@ -7,8 +7,8 @@ function loadAllImages() {
 
 	
 	for (i; i < tableTitle.length; i++) {
-		var imageLink = imageTitle[i].innerText.toLowerCase();
-		$('.tableImage')[i].innerHTML = "<a href='/" + imageLink + "/'" + "><img src='//cdn.allghostthemes.com/assets/images/" + encodeURI(imageTitle[i].innerText) + ".jpg' /></a>";
+		var imageLink = imageTitle[i].textContent.toLowerCase();
+		$('.tableImage')[i].innerHTML = "<a href='/" + imageLink + "/'" + "><img src='//cdn.allghostthemes.com/assets/images/" + encodeURI(imageTitle[i].textContent) + ".jpg' /></a>";
 	}
 }
 
