@@ -12,27 +12,34 @@
         {{#post}}
 
             <div id="report-buttons-container" class="shareIcons">
-                <a data-remodal-target="modal">Report Problem</a>
-                <div class="remodal" data-remodal-id="modal">
+                <a data-remodal-target="problem">Report Problem</a>
+                <div class="remodal" data-remodal-id="problem" data-remodal-options="closeOnConfirm: false">
                     <button data-remodal-action="close" class="remodal-close"></button>
-                    <form action="//formspree.io/dbalders@gmail.com"
+                    <form action="//formspree.io/info@howtoinstallghost.com"
                           method="POST">
                         <input type="hidden" name="_subject" value="[AGT Problem]" />
+                        <input type="hidden" name="_next" />
                         <p>Your Email:</p>
-                        <input type="email" name="_replyto">
+                        <input id="remodal-email" type="email" name="_replyto">
                         <p>Description of Problem:</p>
                         <textarea name="message" rows="5" placeholder="Your message"></textarea>
-                        <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
-                        {{!-- <button data-remodal-action="confirm" class="remodal-confirm" type="submit" value="Send">Send</button> --}}
-                        <input class="remodal-confirm" type="submit" value="Send">
+                        <div>
+                            <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+                            {{!-- <button data-remodal-action="confirm" class="remodal-confirm" type="submit" value="Send">Send</button> --}}
+                            <input id="problem-confirm" class="remodal-confirm" type="submit" value="Send">
+                        </div>
                     </form>
                     {{!-- Need to setup on success to close the window via javascript, also figure out where to send them? antoher modal maybe? --}}
-                    
+                </div>
+                <div class="remodal" data-remodal-id="thanks">
+                    <p>Email sent. Thanks!!</p>
+                    <button data-remodal-action="cancel" class="remodal-cancel">Close</button>
                 </div>
             </div>
 
             <script>
                 $('input[name=_subject]').val('[AGT Problem] - ' + window.location.pathname);
+                $('input[name=_next]').val(window.location.pathname + "#thanks");
             </script>
 
 

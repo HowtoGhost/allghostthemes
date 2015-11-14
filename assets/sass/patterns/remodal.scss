@@ -1,0 +1,27 @@
+/*
+ * Remodal Styling
+*/
+
+.remodal {
+
+	form {
+		display: flex;
+		display: -webkit-flex;
+		flex-direction: column;
+		-webkit-flex-direction: column;
+
+		#remodal-email {
+			border: 1px solid black;
+			margin-top: 0px;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+
+		button, input {
+			margin: auto;
+			margin-top: 10px;
+		}
+	}
+}
