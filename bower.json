@@ -3,6 +3,7 @@
   "dependencies": {
     "jquery": "1.10",
     "DataTables": "latest",
-    "datatables-responsive": "latest"
+    "datatables-responsive": "latest",
+    "remodal": "latest"
   }
 }
