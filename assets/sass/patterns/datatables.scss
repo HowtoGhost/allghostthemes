@@ -47,7 +47,7 @@
 	}
 }
 
-.tableImage {
+tbody .tableImage {
 	width: 250px;
 	height: 100px;
 	text-align: center;
@@ -87,7 +87,7 @@
     }
 }
 
-.tableTitle {
+tbody .tableTitle {
     width: 5px;
     white-space: normal;
     font-size: 18px;
@@ -97,7 +97,7 @@
     }
 }
 
-.tableImage {
+tbody .tableImage {
     width: 250px;
 }
 
@@ -109,15 +109,15 @@
     text-align:center !important;
 }
 
-.tableRows td {
-    vertical-align: middle;
-}
-
 #indexTable {
     border-collapse: collapse;
 
     td, thead tr th {
     	border: 1px solid #ddd;
+    }
+
+    tbody tr td {
+    	vertical-align: middle;
     }
 }
 
