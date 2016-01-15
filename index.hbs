@@ -1,88 +1,37 @@
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-
-<header>
-  
-</header>
-
 {{! The main content area on the homepage }}
 <main class="content index-content" role="main">
-<div id="home-main-header">
-  <h2 id="home-header">What is All Ghost Themes</h2>
-  <p id="homeDesc">All Ghost Themes was built to make searching for a Ghost theme as easy and as fast as possible. We have listed every Ghost theme we have been able to find here so you can easily scroll through hundreds of themes without the need to load page after page just to get a preview of what it looks like. If you need help uploading a theme, check out our <a href="http://www.ghostforbeginners.com/how-to-upload-a-theme/">How to Upload a Theme</a> post.</p>
-  <br style="clear:both">
-</div>
- <div id="homeContent">
-  <div class="arrow-down-2"></div>
-    <table id="indexTable" class="display responsive" width="100%">
-      <thead>
-        <tr>
-          <th class="tableNameHeader tdCenter">Theme Name</th>
-          <th class="tableDemoHeader tdCenter">Demo</th>
-          <th class="tablePriceHeader tdCenter min-tablet-l">Price</th>
-          <th class="tableDescHeader tdCenter min-tablet-l">Description</th>
-          <th class="tableColumnHeader tdCenter min-tablet-l">Columns</th>
-          <th class="max-tablet-l"></th>
-        </tr>
-      </thead>
-      <tbody>
-    {{! Each post will be output using this markup }}
-    {{#foreach posts}}
-        <tr class="tableRows">
-            <td class="tableTitle"><a href="{{url}}">{{title}}</a>
-              <input type="hidden" name="tags" value="{{#foreach tags}}{{name}},{{/foreach}}">
-            </td>
-            <td class="tableImage" style="max-width:250px;"><p>Load Image</p></td>
-            <td class="tdCenter price"></td>
-            <td id={{title}} class="indexDescription">{{excerpt characters="500"}}</td>
-               <script>
-                var desc = $('.indexDescription').text();
-                var descSplit = desc.split("-", 10);
-                var descSlice = "";
-                for (var i=0;i<descSplit.length;i++)
-                  {
-                    if(i>=2) {
-                      descSlice = descSlice+descSplit[i];
-                    }
-                  };
-                $("td.indexDescription").replaceWith("<td class=\"indexDescriptionSlice\">"+descSlice+"</td>");
-                </script>
-            <td class="tdCenter columns"></td>
-            <td></td>
-        </tr>
-        {{/foreach}}
-        <script>
-          $(function(){
-  
-            $("tbody tr").each(function(){
-              var tags = $(this).find("input[name='tags']").val();
-              tags = tags.replace(/[A-Za-z-]/g, "");
-              var tags_array = tags.split(",");
-              tags_array = tags_array.filter(String);
-              tags_array.sort();
-              
-              $(this).find(".price").html(tags_array[0]);
-              $(this).find(".columns").html(tags_array[1]);
-            });
+    <div id="home-main-header">
+        <h2 id="home-header">What is All Ghost Themes</h2>
+        <p id="homeDesc">All Ghost Themes was built to make searching for a Ghost theme as easy and as fast as possible. We have listed every Ghost theme we have been able to find here so you can easily scroll through hundreds of themes without the need to load page after page just to get a preview of what it looks like. If you need help uploading a theme, check out our <a href="http://www.ghostforbeginners.com/how-to-upload-a-theme/">How to Upload a Theme</a> post.</p>
+        <br style="clear:both">
+    </div>
+    <div id="homeContent">
+        <div class="arrow-down-2"></div>
+        <table id="indexTable" class="display responsive" width="100%">
+            <thead>
+                <tr>
+                    <th class="tableNameHeader tdCenter">Theme Name</th>
+                    <th class="tableDemoHeader tdCenter">Demo</th>
+                    <th class="tablePriceHeader tdCenter min-tablet-l">Price</th>
+                    <th class="tableDescHeader tdCenter min-tablet-l">Description</th>
+                    <th class="tableColumnHeader tdCenter min-tablet-l">Columns</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
             
-          });
-        </script>
-    </tbody>
-    </table>
-
+        </table>
+    </div>
     <link rel="stylesheet" href="{{asset "bower_components/DataTables/media/css/jquery.dataTables.min.css"}}">
     <link rel="stylesheet" href="{{asset "bower_components/datatables-responsive/css/dataTables.responsive.css"}}">
-
     <script type="text/javascript" src="{{asset "bower_components/DataTables/media/js/jquery.dataTables.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "bower_components/datatables-responsive/js/dataTables.responsive.js"}}"></script>
-
     <script type="text/javascript" src="{{asset "js/datatables-initialize.js"}}"></script>
     <script>
-      $(document).ready(function() {
+    $(document).ready(function() {
         datatableInitialize();
-      } );
+    });
     </script>
-    </div>
 </main>
