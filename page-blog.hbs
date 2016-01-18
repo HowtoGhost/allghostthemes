@@ -7,7 +7,7 @@
 <main class="content" role="main">
     <div class="index-wrapper flex-wrapper">
         <div id="content" class="flex-content">
-        	{{#get "posts" filter="tag:blog"}}
+        	{{#get "posts" include="tags,author" filter="tag:blog"}}
 	        	{{#foreach posts}}
 	            <article class="{{post_class}}">
 	                <header class="post-header">
