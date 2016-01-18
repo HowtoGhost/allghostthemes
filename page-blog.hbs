@@ -1,0 +1,33 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! The main content area on the homepage }}
+<main class="content" role="main">
+    <div class="index-wrapper flex-wrapper">
+        <div id="content" class="flex-content">
+        	{{#get "posts" filter="tag:blog"}}
+	        	{{#foreach posts}}
+	            <article class="{{post_class}}">
+	                <header class="post-header">
+	                    <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+	                </header>
+	                <section class="post-excerpt">
+	                    <p class="post-info">{{date published_at format="DD MMMM, YYYY"}}{{tags separator=", " prefix=" - Tags: "}}</p>
+	                    <p class="post-words">{{content}}</p>
+	                </section>
+	            </article>
+	            <hr class="blog-hr">
+	            {{/foreach}}
+
+	            {{!! After all the posts, we have the previous/next pagination links }}
+	            {{pagination}}
+            {{/get}}
+        </div>
+        
+        {{> "sidebar"}}
+
+        <div style="clear:both;"></div>
+    </div>
+</main>

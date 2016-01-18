@@ -5,87 +5,97 @@
 <script type="text/javascript" src="{{asset "bower_components/remodal/dist/remodal.min.js"}}"></script>
     
 <main class="content post-content" role="main">
-
-    <article class="{{post_class}}">
-
+    <div class="wrapper flex-wrapper">
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
+        <div id="content" class="flex-content">
+            <article class="{{post_class}}">
 
-            <div id="report-buttons-container" class="shareIcons">
-                <a data-remodal-target="problem">Report Problem</a>
-                <div class="remodal" data-remodal-id="problem" data-remodal-options="closeOnConfirm: false">
-                    <button data-remodal-action="close" class="remodal-close"></button>
-                    <form action="//formspree.io/info@howtoinstallghost.com"
-                          method="POST">
-                        <input type="hidden" name="_subject" value="[AGT Problem]" />
-                        <input type="hidden" name="_next" />
-                        <p>Your Email:</p>
-                        <input id="remodal-email" type="email" name="_replyto">
-                        <p>Description of Problem:</p>
-                        <textarea name="message" rows="5" placeholder="Your message"></textarea>
-                        <div>
-                            <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
-                            {{!-- <button data-remodal-action="confirm" class="remodal-confirm" type="submit" value="Send">Send</button> --}}
-                            <input id="problem-confirm" class="remodal-confirm" type="submit" value="Send">
+                {{#has tag="blog"}}
+                    <h1 class="post-title">{{{title}}}</h1>
+                    <hr class="post-title-hr">
+
+                {{else}}
+                    <div id="report-buttons-container" class="shareIcons">
+                        <a data-remodal-target="problem">Report Problem</a>
+                        <div class="remodal" data-remodal-id="problem" data-remodal-options="closeOnConfirm: false">
+                            <button data-remodal-action="close" class="remodal-close"></button>
+                            <form action="//formspree.io/info@howtoinstallghost.com"
+                                  method="POST">
+                                <input type="hidden" name="_subject" value="[AGT Problem]" />
+                                <input type="hidden" name="_next" />
+                                <p>Your Email:</p>
+                                <input id="remodal-email" type="email" name="_replyto">
+                                <p>Description of Problem:</p>
+                                <textarea name="message" rows="5" placeholder="Your message"></textarea>
+                                <div>
+                                    <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+                                    {{!-- <button data-remodal-action="confirm" class="remodal-confirm" type="submit" value="Send">Send</button> --}}
+                                    <input id="problem-confirm" class="remodal-confirm" type="submit" value="Send">
+                                </div>
+                            </form>
+                            {{!-- Need to setup on success to close the window via javascript, also figure out where to send them? antoher modal maybe? --}}
                         </div>
-                    </form>
-                    {{!-- Need to setup on success to close the window via javascript, also figure out where to send them? antoher modal maybe? --}}
-                </div>
-                <div class="remodal" data-remodal-id="thanks">
-                    <p>Email sent. Thanks!!</p>
-                    <button data-remodal-action="cancel" class="remodal-cancel">Close</button>
-                </div>
-            </div>
-
-            <script>
-                $('input[name=_subject]').val('[AGT Problem] - ' + window.location.pathname);
-                $('input[name=_next]').val(window.location.pathname + "#thanks");
-            </script>
-
-
-            <section class="post-content">
-                {{content}}
-
-                <div class="next-steps">
-                    <div class="next-steps-header">Next Steps:</div>
-
-                    <div class="next-steps-step"><a href="https://ghostforbeginners.com/how-to-upload-a-theme/">Upload Your New Theme</a></div>
-                    <div class="next-steps-info">After downloading your theme, see how to upload your theme to one of the three most popular Ghost hosting platforms
+                        <div class="remodal" data-remodal-id="thanks">
+                            <p>Email sent. Thanks!!</p>
+                            <button data-remodal-action="cancel" class="remodal-cancel">Close</button>
+                        </div>
                     </div>
 
-                    <div class="next-steps-step"><a href="https://ghostforbeginners.com/theming/">Make Theme Adjustments</a></div>
-                    <div class="next-steps-info">If your theme is missing a feature you would like to add, check out our <a href="https://ghostforbeginners.com/theming/">Ghost theming</a> section of Ghost for Beginners for tutorials</div>
+                    <script>
+                        $('input[name=_subject]').val('[AGT Problem] - ' + window.location.pathname);
+                        $('input[name=_next]').val(window.location.pathname + "#thanks");
+                    </script>
+                {{/has}}
+
+                <div class="post-wrapper">
+                    <div class="post-content">
+                        {{content}}
+
+                        <div class="next-steps">
+                            <div class="next-steps-header">Next Steps:</div>
+
+                            <div class="next-steps-step"><a href="https://ghostforbeginners.com/how-to-upload-a-theme/">Upload Your New Theme</a></div>
+                            <div class="next-steps-info">After downloading your theme, see how to upload your theme to one of the three most popular Ghost hosting platforms
+                            </div>
+
+                            <div class="next-steps-step"><a href="https://ghostforbeginners.com/theming/">Make Theme Adjustments</a></div>
+                            <div class="next-steps-info">If your theme is missing a feature you would like to add, check out our <a href="https://ghostforbeginners.com/theming/">Ghost theming</a> section of Ghost for Beginners for tutorials</div>
+                        </div>
+                    </div>
                 </div>
-            </section>
 
-            <script>
-                var demo=$('.themedemo').attr('src');
-                if (demo != undefined) {
-                    $('.post-content h3').append(" - <a class='demoLink' target='_blank' href='"+demo+"'>Demo</a>");
-                }
+                <script>
+                    var demo=$('.themedemo').attr('src');
+                    if (demo != undefined) {
+                        $('.post-content h3').append(" - <a class='demoLink' target='_blank' href='"+demo+"'>Demo</a>");
+                    }
 
-                $('.dowloadLink, moneyLink').attr('target','_blank'); //Adding open in new tab to download/purchase link
-            </script>
+                    $('.dowloadLink, moneyLink').attr('target','_blank'); //Adding open in new tab to download/purchase link
+                </script>
+    			
+    			<!-- Disqus Comment-->
+    		    <div id="disqus_thread"></div>
+        	       <script type="text/javascript">
+        	           /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        	           var disqus_shortname = 'allghostthemes'; // required: replace example with your forum shortname
+
+        	           /* * * DON'T EDIT BELOW THIS LINE * * */
+        	           (function() {
+        	               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        	               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        	               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        	           })();
+        	       </script>
+        	       <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        		   <!-- End Disqus Comment-->
 			
-			<!-- Disqus Comment-->
-		    <div id="disqus_thread"></div>
-    	       <script type="text/javascript">
-    	           /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    	           var disqus_shortname = 'allghostthemes'; // required: replace example with your forum shortname
+            </article>
+        </div>
+        {{#has tag="blog"}}
+            {{> "sidebar"}}
+        {{/has}}
 
-    	           /* * * DON'T EDIT BELOW THIS LINE * * */
-    	           (function() {
-    	               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    	               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    	               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    	           })();
-    	       </script>
-    	       <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    	       <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    		   <!-- End Disqus Comment-->
-			
         {{/post}}
-
-    </article>
-
+    </div>
 </main>

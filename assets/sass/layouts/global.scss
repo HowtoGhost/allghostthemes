@@ -3,7 +3,7 @@
  */
 
 body {
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 }
 .content {
 	margin-top: 25px;
@@ -28,4 +28,37 @@ body {
 
 .post.page {
 	padding-top: 10px;
+}
+
+.flex-wrapper {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    @media (max-width: 900px) {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+    }
+}
+
+.flex-content {
+    flex: 3;
+    -webkit-flex: 3;
+    padding-left: 25px;
+    padding-top: 25px;
+    max-width: 95%;
+    @media (max-width: 550px) {
+        padding-left: 5px;
+    }
+    img {
+        max-width: 90%;
+    }
+}
+
+.flex-sidebar {
+    flex: 1;
+    -webkit-flex: 1;
+    // width: 200px;
 }
