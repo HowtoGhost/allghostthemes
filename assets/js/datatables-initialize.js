@@ -1,9 +1,9 @@
 //JS to initialize both of the datatables instances
 function datatableInitialize(tagPage) {
-    var tagFilter = "";
+    var tagFilter = "tag:-blog";
     if (typeof(tagPage) !== "undefined") {
-         tagFilter = "tag:" + tagPage;
-                 console.log(tagFilter);
+        tagFilter = "tag:" + tagPage;
+        console.log(tagFilter);
 
     }
     var indexDatatable = $('#indexTable').on('xhr.dt', function(e, settings, json, xhr) {
@@ -26,7 +26,7 @@ function datatableInitialize(tagPage) {
             //encode url into hidden div that then gets replaced on the init below
             json.posts[i].image = "<a href='" + json.posts[i].url + "'><img src='//cdn.allghostthemes.com/assets/images/" + encodeURI(json.posts[i].title) + ".jpg' /></a>";
         }
-    }).on( 'init.dt', function () {
+    }).on('init.dt', function() {
         loadAllImages(indexDatatable);
     }).dataTable({
         ajax: {
@@ -84,12 +84,29 @@ function datatableInitialize(tagPage) {
 
     $("tbody tr").each(function() {
         var tags = $(this).find("input[name='tags']").val();
-        tags = tags.replace(/[A-Za-z-]/g, "");
-        var tags_array = tags.split(",");
-        tags_array = tags_array.filter(String);
-        tags_array.sort();
+        if (typeof(tags) !== "undefined") {
+            tags = tags.replace(/[A-Za-z-]/g, "");
+            var tags_array = tags.split(",");
+            tags_array = tags_array.filter(String);
+            tags_array.sort();
 
-        $(this).find(".price").html(tags_array[0]);
-        $(this).find(".columns").html(tags_array[1]);
+            $(this).find(".price").html(tags_array[0]);
+            $(this).find(".columns").html(tags_array[1]);
+        }
     });
 }
+
+jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+    "currency-pre": function(a) {
+        a = (a === "-") ? 0 : a.replace(/[^\d\-\.]/g, "");
+        return parseFloat(a);
+    },
+
+    "currency-asc": function(a, b) {
+        return a - b;
+    },
+
+    "currency-desc": function(a, b) {
+        return b - a;
+    }
+})

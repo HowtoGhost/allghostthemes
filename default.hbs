@@ -40,22 +40,5 @@
   <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
   <script defer type="text/javascript" src="{{asset "js/imageLoad.js"}}"></script>
-
-  <script>
-    jQuery.extend( jQuery.fn.dataTableExt.oSort, {
-        "currency-pre": function ( a ) {
-            a = (a==="-") ? 0 : a.replace( /[^\d\-\.]/g, "" );
-            return parseFloat( a );
-        },
-     
-        "currency-asc": function ( a, b ) {
-            return a - b;
-        },
-     
-        "currency-desc": function ( a, b ) {
-            return b - a;
-        }
-    })
-  </script>
 </body>
 </html>
