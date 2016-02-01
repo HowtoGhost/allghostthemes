@@ -4,6 +4,7 @@
     "jquery": "1.10",
     "DataTables": "latest",
     "datatables-responsive": "latest",
-    "remodal": "latest"
+    "remodal": "latest",
+    "fluidbox": "latest"
   }
 }

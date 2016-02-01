@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     <link rel="shortcut icon" href="/global-resources/icons/how-to-ghost_logo_favicon.ico">
     <link rel="stylesheet" href="{{asset "css/style.css"}}">
+    <link rel="stylesheet" type="text/css" href={{asset "bower_components/fluidbox/dist/css/fluidbox.min.css"}} />
 
     <script type="text/javascript" src="{{asset "bower_components/jquery/jquery.min.js"}}"></script>
 
@@ -40,5 +41,11 @@
   <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
   <script defer type="text/javascript" src="{{asset "js/imageLoad.js"}}"></script>
+  <script type="text/javascript" src={{asset "bower_components/fluidbox/dist/js/jquery.fluidbox.min.js"}}></script>
+    <script>
+        $('.post-content a, .post a').fluidbox({
+            viewportFill: 0.8,
+        });
+    </script>
 </body>
 </html>
